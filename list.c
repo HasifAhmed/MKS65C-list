@@ -5,13 +5,13 @@
 struct node {int i; struct node *next;};
 
 void print_list(struct node * p){
-  
+
   if(p->next == NULL){
     printf("END\n-----------\n");
   }
   else {
     struct node *hold = p;
-    printf("%d -> \n", hold -> i);
+    printf("|%d| -> ", hold -> i);
     print_list(hold -> next);
   }
 
@@ -43,7 +43,8 @@ int main(){
   print_list(node1);
   node1 = insert_front(node1, 4);
   print_list(node1);
-  free_list(node1);
+  node1 = free_list(node1);
+  print_list(node1);
 
 
 
