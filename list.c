@@ -26,9 +26,11 @@ struct node * free_list(struct node * p){
   struct node * hold = p;
   struct node *temp = p;
   while(hold){
-    free(temp);
+    
     hold = hold -> next;
+    free(temp);
     temp = hold;
+    
   }
   return hold;
 }
